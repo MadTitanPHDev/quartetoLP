@@ -42,5 +42,3 @@ export const staggerContainer = {
     transition: { staggerChildren: 0.12, delayChildren: 0.08 },
   },
 }
-
-export const viewport = { once: true, margin: '-60px' as const }

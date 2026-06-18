@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oquarteto.com.br/sitemap.xml

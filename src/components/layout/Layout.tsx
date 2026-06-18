@@ -1,8 +1,13 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
+import { motion, useReducedMotion } from 'framer-motion'
 import Header from './Header'
 import Footer from './Footer'
+import { fadeUp, transition } from '../../lib/motion'
 
 export default function Layout() {
+  const location = useLocation()
+  const shouldReduceMotion = useReducedMotion()
+
   return (
     <div className="flex min-h-screen flex-col">
       <a
@@ -14,7 +19,15 @@ export default function Layout() {
 
       <Header />
       <main id="conteudo-principal" className="flex-1">
-        <Outlet />
+        <motion.div
+          key={location.pathname}
+          initial={shouldReduceMotion ? false : 'hidden'}
+          animate="visible"
+          variants={fadeUp}
+          transition={transition.default}
+        >
+          <Outlet />
+        </motion.div>
       </main>
       <Footer />
     </div>

@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import FadeIn from './FadeIn'
 
 type SectionProps = {
   id?: string
@@ -28,20 +29,22 @@ export default function Section({
   return (
     <section id={id} className={`py-16 sm:py-20 ${variantStyles[variant]} ${className}`}>
       <div className="section-container">
-        <header className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
-          <h2
-            className={`text-3xl font-bold tracking-tight sm:text-4xl ${
-              isDark ? 'text-white' : 'text-brand-950'
-            }`}
-          >
-            {title}
-          </h2>
-          {subtitle && (
-            <p className={`mt-3 text-lg ${isDark ? 'text-brand-200' : 'text-slate-600'}`}>
-              {subtitle}
-            </p>
-          )}
-        </header>
+        <FadeIn>
+          <header className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
+            <h2
+              className={`text-3xl font-bold tracking-tight sm:text-4xl ${
+                isDark ? 'text-white' : 'text-brand-950'
+              }`}
+            >
+              {title}
+            </h2>
+            {subtitle && (
+              <p className={`mt-3 text-lg ${isDark ? 'text-brand-200' : 'text-slate-600'}`}>
+                {subtitle}
+              </p>
+            )}
+          </header>
+        </FadeIn>
         {children}
       </div>
     </section>

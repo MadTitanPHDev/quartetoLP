@@ -1,4 +1,5 @@
 import type { Member } from '../../data/content'
+import FadeIn from './FadeIn'
 
 type MemberCardProps = {
   member: Member
@@ -13,24 +14,28 @@ export default function MemberCard({ member, reversed = false }: MemberCardProps
         reversed ? 'md:[&>*:first-child]:order-2' : ''
       }`}
     >
-      <figure className="overflow-hidden rounded-2xl border border-brand-100 bg-brand-50 shadow-sm">
-        <img
-          src={member.image.src}
-          alt={member.image.alt}
-          className="aspect-[4/5] w-full object-cover"
-          loading="lazy"
-          width={480}
-          height={600}
-        />
-      </figure>
+      <FadeIn variant={reversed ? 'right' : 'left'}>
+        <figure className="group overflow-hidden rounded-2xl border border-brand-100 bg-brand-50 shadow-sm transition-shadow duration-300 hover:shadow-md">
+          <img
+            src={member.image.src}
+            alt={member.image.alt}
+            className="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+            width={480}
+            height={600}
+          />
+        </figure>
+      </FadeIn>
 
-      <div>
-        <h3 className="text-2xl font-bold text-brand-950">{member.name}</h3>
-        <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-brand-600">
-          {member.role}
-        </p>
-        <p className="mt-4 leading-relaxed text-slate-600">{member.bio}</p>
-      </div>
+      <FadeIn variant={reversed ? 'left' : 'right'} delay={0.1}>
+        <div>
+          <h3 className="text-2xl font-bold text-brand-950">{member.name}</h3>
+          <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-brand-600">
+            {member.role}
+          </p>
+          <p className="mt-4 leading-relaxed text-slate-600">{member.bio}</p>
+        </div>
+      </FadeIn>
     </article>
   )
 }

@@ -1,11 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { navigation, siteConfig } from '../../data/content'
+import { fadeDown, transition } from '../../lib/motion'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
   const isHome = location.pathname === '/'
+  const shouldReduceMotion = useReducedMotion()
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [location.pathname])
 
   const handleNavClick = () => setMenuOpen(false)
 
@@ -17,7 +32,14 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-brand-100 bg-white/95 backdrop-blur-sm">
+    <motion.header
+      className="sticky top-0 z-50 border-b border-brand-100 bg-white/95 backdrop-blur-sm"
+      initial={false}
+      animate={{
+        boxShadow: scrolled ? '0 4px 24px rgba(4, 61, 24, 0.08)' : '0 0px 0px rgba(0,0,0,0)',
+      }}
+      transition={shouldReduceMotion ? { duration: 0 } : transition.fast}
+    >
       <div className="section-container flex h-16 items-center justify-between gap-4">
         <Link
           to="/"
@@ -25,7 +47,7 @@ export default function Header() {
           aria-label={`${siteConfig.fullName} — página inicial`}
           onClick={handleNavClick}
         >
-          <span className="text-lg font-bold text-brand-950 group-hover:text-brand-700">
+          <span className="text-lg font-bold text-brand-950 transition-colors group-hover:text-brand-700">
             {siteConfig.name}
           </span>
           <span className="hidden text-xs text-slate-500 sm:block">
@@ -40,7 +62,7 @@ export default function Header() {
               to={resolveHref(item.href)}
               className={({ isActive }) =>
                 [
-                  'rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                  'rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200',
                   isActive && item.href === '/encontro-sst'
                     ? 'bg-brand-50 text-brand-800'
                     : 'text-slate-600 hover:bg-brand-50 hover:text-brand-800',
@@ -55,7 +77,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-lg border border-brand-200 p-2 text-brand-800 md:hidden"
+          className="inline-flex items-center justify-center rounded-lg border border-brand-200 p-2 text-brand-800 transition hover:bg-brand-50 md:hidden"
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
@@ -72,27 +94,34 @@ export default function Header() {
         </button>
       </div>
 
-      {menuOpen && (
-        <nav
-          id="mobile-menu"
-          className="border-t border-brand-100 bg-white md:hidden"
-          aria-label="Navegação mobile"
-        >
-          <ul className="section-container flex flex-col gap-1 py-3">
-            {navigation.map((item) => (
-              <li key={item.href}>
-                <NavLink
-                  to={resolveHref(item.href)}
-                  className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-brand-50"
-                  onClick={handleNavClick}
-                >
-                  {item.label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
-    </header>
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.nav
+            id="mobile-menu"
+            className="overflow-hidden border-t border-brand-100 bg-white md:hidden"
+            aria-label="Navegação mobile"
+            initial={shouldReduceMotion ? false : 'hidden'}
+            animate="visible"
+            exit="hidden"
+            variants={fadeDown}
+            transition={transition.fast}
+          >
+            <ul className="section-container flex flex-col gap-1 py-3">
+              {navigation.map((item) => (
+                <li key={item.href}>
+                  <NavLink
+                    to={resolveHref(item.href)}
+                    className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-brand-50"
+                    onClick={handleNavClick}
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </motion.header>
   )
 }

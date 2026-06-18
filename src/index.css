@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-50: #eef8fa;
-  --color-brand-100: #d5edf2;
-  --color-brand-200: #aedbe5;
-  --color-brand-300: #7bc2d3;
-  --color-brand-400: #47a3ba;
-  --color-brand-500: #2d879e;
-  --color-brand-600: #266d82;
-  --color-brand-700: #24596b;
-  --color-brand-800: #244a59;
-  --color-brand-900: #223f4c;
-  --color-brand-950: #0f4c5c;
+  --color-brand-50: #eef8ec;
+  --color-brand-100: #dcedda;
+  --color-brand-200: #b9dfb4;
+  --color-brand-300: #96cd8e;
+  --color-brand-400: #73bb68;
+  --color-brand-500: #5baa4f;
+  --color-brand-600: #3d9a3a;
+  --color-brand-700: #0a7a33;
+  --color-brand-800: #086d2b;
+  --color-brand-900: #055021;
+  --color-brand-950: #043d18;
 
-  --color-accent-400: #f4a261;
-  --color-accent-500: #e76f51;
-  --color-accent-600: #d45a3c;
+  --color-accent-400: #73bb68;
+  --color-accent-500: #5baa4f;
+  --color-accent-600: #4a9640;
 
   --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
 }
@@ -23,6 +23,20 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 
   body {

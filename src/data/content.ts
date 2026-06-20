@@ -60,12 +60,12 @@ export const members: Member[] = [
   },
   {
     id: 'integrante-3',
-    name: 'Cláudio Pereira de Lima',
-    role: 'Técnico em Segurança do Trabalho',
-    bio: 'Educador Físico , Especialista em Trânsito, Técnico em Segurança do Trabalho. Trabalhou em várias empresas como Empresa de Transportes Andorinha S/A (28 anos), Frigorífico Bordon S/A (5 anos). Foi instrutor em SST do Senac, do Senai e hoje é instrutor no Sest Senat unidade de Presidente Prudente.',
+    name: 'Francisley Ferreira Sanches',
+    role: 'Técnico em Segurança do Trabalho · Especialista em Construção Civil',
+    bio: 'Graduado em Administração e pós-graduado em Gestão de Negócios e Agronegócios, é Técnico em Segurança do Trabalho com mais de 30 anos de trajetória em diversos segmentos. Foi professor de SST no SENAC e no Colégio CRIARTE e, nas últimas duas décadas, atua como TST especialista e responsável do SENAI no convênio com o SindusCon na construção civil, desenvolvendo suas atividades na região do Oeste Paulista.',
     image: {
       src: '/images/francisley.webp',
-      alt: 'Foto do integrante 3 — substituir por imagem definitiva',
+      alt: 'Francisley Ferreira Sanches — técnico em Segurança do Trabalho',
     },
   },
   {

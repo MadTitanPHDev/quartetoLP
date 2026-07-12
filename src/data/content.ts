@@ -95,12 +95,13 @@ export const eventPreview = {
 
 export const eventPageContent = {
   title: 'Encontro de SST',
-  subtitle: 'Propósito, história e experiências do evento',
+  subtitle: '7ª edição em Presidente Prudente — 25 de julho de 2026',
   purpose: {
-    title: 'Por que criamos o Encontro',
+    title: 'Sobre o evento',
     paragraphs: [
-      'Texto temporário sobre o intuito da criação do Encontro de SST: reunir a comunidade, fomentar debates técnicos e compartilhar soluções reais para os desafios da Saúde e Segurança do Trabalho.',
-      'Este espaço será preenchido com o conteúdo oficial que você fornecer posteriormente, incluindo contexto histórico, objetivos e público-alvo do evento.',
+      'O Quarteto de SST (Segurança e Saúde do Trabalho) é um grupo formado por profissionais da área, tendo como integrantes Antonio Tadeu da Costa, Cláudio Pereira de Lima, Francisley Ferreira Sanches e Wesley de Lima Gaspar.',
+      'O grupo surgiu no ano de 2018, tendo como um dos seus objetivos realizar encontros na área de SST na cidade de Presidente Prudente, no estado de São Paulo.',
+      
     ],
   },
   highlights: [
@@ -119,19 +120,19 @@ export const eventPageContent = {
   ],
   gallery: [
     {
-      src: '/images/event-gallery-1.svg',
-      alt: 'Momento de palestra no Encontro de SST — imagem temporária',
-      caption: 'Legenda temporária — edição anterior do evento',
+      src: '/images/img1.webp',
+      alt: 'Momento do Encontro de SST — edição anterior',
+      caption: 'Encontro de SST — imagem 1',
     },
     {
-      src: '/images/event-gallery-2.svg',
-      alt: 'Participantes em networking no Encontro de SST — imagem temporária',
-      caption: 'Legenda temporária — interação entre participantes',
+      src: '/images/img2.webp',
+      alt: 'Participantes do Encontro de SST',
+      caption: 'Encontro de SST — imagem 2',
     },
     {
-      src: '/images/event-gallery-3.svg',
-      alt: 'Painel de discussão no Encontro de SST — imagem temporária',
-      caption: 'Legenda temporária — painel com especialistas',
+      src: '/images/img3.webp',
+      alt: 'Atividades do Encontro de SST',
+      caption: 'Encontro de SST — imagem 3',
     },
   ],
   videos: [
@@ -151,9 +152,28 @@ export const eventPageContent = {
   additionalText: {
     title: 'Informações adicionais',
     paragraphs: [
-      'Seção para datas, local, inscrições, patrocínios ou outras informações que serão adicionadas futuramente.',
-      'Mantenha os textos objetivos e escaneáveis para facilitar a leitura em dispositivos móveis e melhorar o SEO.',
+      'Neste ano, o Quarteto está organizando o 7º ESST, previsto para 25/07/2026 (sábado). A data foi escolhida em virtude da comemoração ao 54º aniversário do SESMT (Serviço Especializado em Segurança e em Medicina do Trabalho) e ao DNPAT (Dia Nacional da Prevenção de Acidentes do Trabalho), cuja data oficial é 27/07/2026 (segunda-feira).',
+      'Confira abaixo o formato de realização do 7º ESST:',
     ],
+    details: [
+      { label: 'Data', value: '25/07/2026' },
+      { label: 'Dia da semana', value: 'Sábado' },
+      { label: 'Horário', value: 'Das 07h30 às 13h30' },
+      { label: 'Carga horária', value: '6 horas' },
+      {
+        label: 'Local',
+        value: 'Salão de festas Limoeiro, Campus II da UNOESTE',
+      },
+      {
+        label: 'Endereço',
+        value:
+          'Rodovia Raposo Tavares, Km 572, bairro Limoeiro, CEP 19.067-175 — Presidente Prudente (SP), Brasil',
+      },
+    ],
+    registration: {
+      label: 'Inscrições e informações completas',
+      url: 'https://www.even3.com.br/setimoesst-734040/',
+    },
   },
 } as const
 

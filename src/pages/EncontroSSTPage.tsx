@@ -9,20 +9,33 @@ import { eventPageContent, siteConfig } from '../data/content'
 
 export default function EncontroSSTPage() {
   const description =
-    'Saiba mais sobre o Encontro de SST: propósito do evento, galeria de imagens, vídeos e informações organizadas pelo Quarteto.'
+    '7º Encontro de SST em Presidente Prudente (SP), em 25/07/2026. Conheça o evento organizado pelo Quarteto de Saúde e Segurança do Trabalho.'
 
   const eventJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Event',
     name: eventPageContent.title,
     description,
+    startDate: '2026-07-25',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    eventStatus: 'https://schema.org/EventScheduled',
+    location: {
+      '@type': 'Place',
+      name: 'Salão de festas Limoeiro — UNOESTE Campus II',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Rodovia Raposo Tavares, Km 572, bairro Limoeiro',
+        postalCode: '19067-175',
+        addressLocality: 'Presidente Prudente',
+        addressRegion: 'SP',
+        addressCountry: 'BR',
+      },
+    },
     organizer: {
       '@type': 'Organization',
       name: siteConfig.fullName,
       url: siteConfig.url,
     },
-    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-    eventStatus: 'https://schema.org/EventScheduled',
   }
 
   return (
@@ -63,7 +76,7 @@ export default function EncontroSSTPage() {
         </div>
       </section>
 
-      {/* Propósito — intuito da criação do evento */}
+      {/* Sobre o evento */}
       <Section title={eventPageContent.purpose.title}>
         <FadeIn>
           <div className="mx-auto max-w-3xl space-y-4 text-slate-600">
@@ -101,15 +114,35 @@ export default function EncontroSSTPage() {
         <VideoSection videos={[...eventPageContent.videos]} />
       </Section>
 
-      {/* Textos adicionais — inscrições, datas, patrocínios etc. */}
+      {/* Informações adicionais — data, local e inscrições */}
       <Section title={eventPageContent.additionalText.title} variant="muted">
         <FadeIn>
-          <div className="mx-auto max-w-3xl space-y-4 text-slate-600">
+          <div className="mx-auto max-w-3xl space-y-6 text-slate-600">
             {eventPageContent.additionalText.paragraphs.map((paragraph) => (
               <p key={paragraph.slice(0, 32)} className="leading-relaxed">
                 {paragraph}
               </p>
             ))}
+
+            <dl className="grid gap-4 rounded-xl border border-brand-100 bg-white p-6 sm:grid-cols-2">
+              {eventPageContent.additionalText.details.map((item) => (
+                <div key={item.label} className={item.label === 'Endereço' ? 'sm:col-span-2' : ''}>
+                  <dt className="text-sm font-semibold text-brand-800">{item.label}</dt>
+                  <dd className="mt-1 text-sm leading-relaxed">{item.value}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <p>
+              <a
+                href={eventPageContent.additionalText.registration.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex rounded-lg bg-brand-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-800 hover:scale-105 active:scale-95"
+              >
+                {eventPageContent.additionalText.registration.label}
+              </a>
+            </p>
           </div>
         </FadeIn>
       </Section>

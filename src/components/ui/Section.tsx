@@ -8,6 +8,7 @@ type SectionProps = {
   children: ReactNode
   variant?: 'default' | 'muted' | 'dark'
   className?: string
+  containerClassName?: string
 }
 
 const variantStyles = {
@@ -23,12 +24,13 @@ export default function Section({
   children,
   variant = 'default',
   className = '',
+  containerClassName = '',
 }: SectionProps) {
   const isDark = variant === 'dark'
 
   return (
     <section id={id} className={`py-16 sm:py-20 ${variantStyles[variant]} ${className}`}>
-      <div className="section-container">
+      <div className={`section-container ${containerClassName}`}>
         <FadeIn>
           <header className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
             <h2

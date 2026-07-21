@@ -55,7 +55,7 @@ export const members: Member[] = [
     bio: 'Educador Físico , Especialista em Trânsito, Técnico em Segurança do Trabalho. Trabalhou em várias empresas como Empresa de Transportes Andorinha S/A (28 anos), Frigorífico Bordon S/A (5 anos). Foi instrutor em SST do Senac, do Senai e hoje é instrutor no Sest Senat unidade de Presidente Prudente.',
     image: {
       src: '/images/claudio.webp',
-      alt: 'Foto do integrante 3 — substituir por imagem definitiva',
+      alt: 'Cláudio Pereira de Lima — técnico em Segurança do Trabalho',
     },
   },
   {
@@ -120,21 +120,27 @@ export const eventPageContent = {
   ],
   gallery: [
     {
-      src: '/images/img1.webp',
-      alt: 'Momento do Encontro de SST — edição anterior',
-      caption: 'Encontro de SST — imagem 1',
+      src: '/images/img1-painel de exposição.webp',
+      alt: 'Painel de exposição',
     },
     {
-      src: '/images/img2.webp',
-      alt: 'Participantes do Encontro de SST',
-      caption: 'Encontro de SST — imagem 2',
+      src: '/images/img2-palestra interariva com o publico sobre equipamento deteccao de gas.webp',
+      alt: 'Palestra interativa com o público sobre equipamento de detecção de gás',
     },
     {
-      src: '/images/img3.webp',
-      alt: 'Atividades do Encontro de SST',
-      caption: 'Encontro de SST — imagem 3',
+      src: '/images/img3-homenageados e palestrantes do 6 encontro.webp',
+      alt: 'Homenageados e palestrantes do 6º encontro',
+    },
+    {
+      src: '/images/img4-palestra do 5 encontro.webp',
+      alt: 'Palestra do 5º encontro',
+    },
+    {
+      src: '/images/img5-participantes do segundo encontro.webp',
+      alt: 'Participantes do segundo encontro',
     },
   ],
+  showVideos: false,
   videos: [
     {
       title: 'Vídeo institucional do evento',
@@ -151,15 +157,17 @@ export const eventPageContent = {
   ],
   additionalText: {
     title: 'Informações adicionais',
-    paragraphs: [
-      'Neste ano, o Quarteto está organizando o 7º ESST, previsto para 25/07/2026 (sábado). A data foi escolhida em virtude da comemoração ao 54º aniversário do SESMT (Serviço Especializado em Segurança e em Medicina do Trabalho) e ao DNPAT (Dia Nacional da Prevenção de Acidentes do Trabalho), cuja data oficial é 27/07/2026 (segunda-feira).',
-      'Confira abaixo o formato de realização do 7º ESST:',
-    ],
+    highlight: {
+      edition: '7º ESST',
+      editionFull: '7º Encontro de Segurança e Saúde do Trabalho',
+      date: '25/07/2026',
+      day: 'Sábado',
+      time: 'Das 07h30 às 13h30',
+      workload: '6 horas de carga horária',
+      context:
+        'O Quarteto organiza esta edição em data especial: comemoração ao 54º aniversário do SESMT (Serviço Especializado em Segurança e em Medicina do Trabalho) e ao DNPAT (Dia Nacional da Prevenção de Acidentes do Trabalho), cuja data oficial é 27/07/2026 (segunda-feira).',
+    },
     details: [
-      { label: 'Data', value: '25/07/2026' },
-      { label: 'Dia da semana', value: 'Sábado' },
-      { label: 'Horário', value: 'Das 07h30 às 13h30' },
-      { label: 'Carga horária', value: '6 horas' },
       {
         label: 'Local',
         value: 'Salão de festas Limoeiro, Campus II da UNOESTE',
@@ -171,7 +179,7 @@ export const eventPageContent = {
       },
     ],
     registration: {
-      label: 'Inscrições e informações completas',
+      label: 'Garanta sua vaga',
       url: 'https://www.even3.com.br/setimoesst-734040/',
     },
   },

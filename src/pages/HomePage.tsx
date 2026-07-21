@@ -13,7 +13,7 @@ import {
 
 export default function HomePage() {
   const description =
-    'Conheça O Quarteto de Saúde e Segurança do Trabalho: especialistas em SST, história do grupo, integrantes e o Encontro de SST anual.'
+    'Conheça O Quarteto de Segurança e Saúde do Trabalho: especialistas em SST, história do grupo, integrantes e o Encontro de SST anual.'
 
   return (
     <>
@@ -28,7 +28,7 @@ export default function HomePage() {
           <Stagger onMount>
             <StaggerItem>
               <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-brand-200">
-                Saúde e Segurança do Trabalho
+                Segurança e Saúde do Trabalho
               </p>
             </StaggerItem>
             <StaggerItem>

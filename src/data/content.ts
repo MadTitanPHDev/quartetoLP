@@ -4,25 +4,26 @@
  */
 
 export const siteConfig = {
-  name: 'O Quarteto de Saúde e Segurança do Trabalho',
-  fullName: 'O Quarteto de Saúde e Segurança do Trabalho',
+  name: 'O Quarteto',
+  fullName: 'O Quarteto de Segurança e Saúde do Trabalho',
   tagline: 'Conhecimento, prática e compromisso com a SST',
   url: 'https://oquarteto.com.br',
   locale: 'pt_BR',
   email: 'contato@oquarteto.com.br',
+  logo: '/images/logo4teto.svg',
 } as const
 
 export const aboutContent = {
   title: 'Sobre o Quarteto',
-  subtitle: 'Uma trajetória dedicada à Saúde e Segurança do Trabalho',
+  subtitle: 'Uma trajetória dedicada à Segurança e Saúde do Trabalho',
   paragraphs: [
-    'O Quarteto de Saúde e Segurança do Trabalho nasceu da união de profissionais com trajetórias complementares em SST, comprometidos em disseminar conhecimento técnico de forma acessível e aplicável.',
+    'O Quarteto de Segurança e Saúde do Trabalho nasceu da união de profissionais com trajetórias complementares em SST, comprometidos em disseminar conhecimento técnico de forma acessível e aplicável.',
     'Ao longo dos anos, o grupo consolidou-se como referência em debates qualificados sobre prevenção de riscos, ergonomia, gestão de SST e cultura de segurança nas organizações.',
     'Nossa missão é conectar teoria e prática, promovendo espaços de troca entre especialistas, gestores e trabalhadores interessados em ambientes mais seguros e saudáveis.',
   ],
   image: {
     src: '/images/quarteto.webp',
-    alt: 'Equipe do Quarteto de Saúde e Segurança do Trabalho em reunião',
+    alt: 'Equipe do Quarteto de Segurança e Saúde do Trabalho em reunião',
   },
 } as const
 
@@ -42,10 +43,10 @@ export const members: Member[] = [
     id: 'integrante-1',
     name: 'Antonio Tadeu da Costa',
     role: 'Advogado · OAB/SP 175.112 · Especialista em SST e Direito do Trabalho',
-    bio: 'Advogado (OAB/SP 175.112) com mais de quatro décadas de atuação em Saúde e Segurança do Trabalho e Direito do Trabalho. Foi docente e coordenador das áreas de SST e meio ambiente do SENAC de Presidente Prudente (SP) por 35 anos, professor universitário na UNOESTE e na TOLEDO e docente convidado da UNESP. Autor do livro "CIPA — Organização, Funcionamento e Atribuições", jurado do Prêmio Proteção Brasil e fundador do escritório ATC & PC Advocacia.',
+    bio: 'Advogado (OAB/SP 175.112) com mais de quatro décadas de atuação em Segurança e Saúde do Trabalho e Direito do Trabalho. Foi docente e coordenador das áreas de SST e meio ambiente do SENAC de Presidente Prudente (SP) por 35 anos, professor universitário na UNOESTE e na TOLEDO e docente convidado da UNESP. Autor do livro "CIPA — Organização, Funcionamento e Atribuições", jurado do Prêmio Proteção Brasil e fundador do escritório ATC & PC Advocacia.',
     image: {
       src: '/images/antonio-tadeu-costa.webp',
-      alt: 'Antonio Tadeu da Costa — advogado e especialista em Saúde e Segurança do Trabalho',
+      alt: 'Antonio Tadeu da Costa — advogado e especialista em Segurança e Saúde do Trabalho',
     },
   },
   {
@@ -72,7 +73,7 @@ export const members: Member[] = [
     id: 'integrante-4',
     name: 'Wesley de Lima Gaspar',
     role: 'Técnico em Segurança do Trabalho',
-    bio: 'Profissional com sólida experiência em Saúde, Segurança e Meio Ambiente desde 2000, com foco em Segurança do Trabalho desde 2015. Iniciou como Auxiliar de Enfermagem do Trabalho e evoluiu para Técnico em Segurança do Trabalho, atuando em empresas do setor industrial e agroindustrial e, atualmente, na Atvos. Formado em Segurança do Trabalho pelo SENAC e em Enfermagem do Trabalho, é membro do Quarteto de SST desde 2018.',
+    bio: 'Profissional com sólida experiência em Segurança, Saúde e Meio Ambiente desde 2000, com foco em Segurança do Trabalho desde 2015. Iniciou como Auxiliar de Enfermagem do Trabalho e evoluiu para Técnico em Segurança do Trabalho, atuando em empresas do setor industrial e agroindustrial e, atualmente, na Atvos. Formado em Segurança do Trabalho pelo SENAC e em Enfermagem do Trabalho, é membro do Quarteto de SST desde 2018.',
     image: {
       src: '/images/wesley.webp',
       alt: 'Wesley de Lima Gaspar — técnico em Segurança do Trabalho',

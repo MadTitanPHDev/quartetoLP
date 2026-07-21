@@ -14,7 +14,7 @@ export default function SEO({
   title,
   description,
   path = '',
-  image = '/images/og-default.svg',
+  image = '/images/logo4teto.svg',
   type = 'website',
   jsonLd,
 }: SEOProps) {

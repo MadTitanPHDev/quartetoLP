@@ -9,7 +9,7 @@ import { eventPageContent, siteConfig } from '../data/content'
 
 export default function EncontroSSTPage() {
   const description =
-    '7º Encontro de SST em Presidente Prudente (SP), em 25/07/2026. Conheça o evento organizado pelo Quarteto de Saúde e Segurança do Trabalho.'
+    '7º Encontro de SST em Presidente Prudente (SP), em 25/07/2026. Conheça o evento organizado pelo Quarteto de Segurança e Saúde do Trabalho.'
 
   const eventJsonLd = {
     '@context': 'https://schema.org',

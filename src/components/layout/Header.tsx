@@ -43,15 +43,24 @@ export default function Header() {
       <div className="section-container flex h-16 items-center justify-between gap-4">
         <Link
           to="/"
-          className="group flex flex-col leading-tight"
+          className="group flex items-center gap-3"
           aria-label={`${siteConfig.fullName} — página inicial`}
           onClick={handleNavClick}
         >
-          <span className="text-lg font-bold text-brand-950 transition-colors group-hover:text-brand-700">
-            {siteConfig.name}
-          </span>
-          <span className="hidden text-xs text-slate-500 sm:block">
-            Saúde e Segurança do Trabalho
+          <img
+            src={siteConfig.logo}
+            alt=""
+            className="h-10 w-10 shrink-0 object-contain sm:h-11 sm:w-11"
+            width={44}
+            height={44}
+          />
+          <span className="flex flex-col leading-tight">
+            <span className="text-lg font-bold text-brand-950 transition-colors group-hover:text-brand-700">
+              {siteConfig.name}
+            </span>
+            <span className="hidden text-xs text-slate-500 sm:block">
+              Segurança e Saúde do Trabalho
+            </span>
           </span>
         </Link>
 

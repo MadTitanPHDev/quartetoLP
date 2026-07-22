@@ -122,11 +122,11 @@ export default function HomePage() {
       >
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <FadeIn variant="left">
-            <figure className="group overflow-hidden rounded-2xl border border-brand-700 transition-shadow duration-300 hover:shadow-lg">
+            <figure className="overflow-hidden rounded-2xl border border-brand-700 bg-brand-900/40">
               <img
                 src={eventPreview.image.src}
                 alt={eventPreview.image.alt}
-                className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="h-auto w-full object-contain"
                 loading="lazy"
                 width={800}
                 height={450}

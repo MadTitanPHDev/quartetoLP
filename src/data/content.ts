@@ -89,8 +89,8 @@ export const eventPreview = {
   ctaLabel: 'Conheça o evento',
   ctaPath: '/encontro-sst',
   image: {
-    src: '/images/event-preview.svg',
-    alt: 'Participantes do Encontro de SST em auditório',
+    src: '/images/SST.webp',
+    alt: 'Encontro de Segurança e Saúde do Trabalho organizado pelo Quarteto',
   },
 } as const
 

@@ -44,7 +44,7 @@ export default function EncontroSSTPage() {
         title={eventPageContent.title}
         description={description}
         path="/encontro-sst"
-        image="/images/event-preview.svg"
+        image="/images/SST.webp"
         type="event"
         jsonLd={eventJsonLd}
       />

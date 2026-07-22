@@ -60,8 +60,8 @@ export default function HomePage() {
           <FadeIn variant="scale" onMount delay={0.2}>
             <figure className="overflow-hidden rounded-2xl border border-white/20 shadow-2xl">
               <img
-                src={aboutContent.image.src}
-                alt={aboutContent.image.alt}
+                src="/images/final.webp"
+                alt="O Quarteto de Segurança e Saúde do Trabalho"
                 className="aspect-[4/3] w-full object-cover"
                 width={800}
                 height={600}

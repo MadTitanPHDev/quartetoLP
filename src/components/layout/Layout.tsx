@@ -5,7 +5,7 @@ import ScrollToTop from './ScrollToTop'
 
 export default function Layout() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col overflow-x-hidden">
       <ScrollToTop />
       <a
         href="#conteudo-principal"

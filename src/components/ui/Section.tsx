@@ -29,12 +29,12 @@ export default function Section({
   const isDark = variant === 'dark'
 
   return (
-    <section id={id} className={`py-16 sm:py-20 ${variantStyles[variant]} ${className}`}>
-      <div className={`section-container ${containerClassName}`}>
+    <section id={id} className={`overflow-x-clip py-16 sm:py-20 ${variantStyles[variant]} ${className}`}>
+      <div className={`section-container min-w-0 ${containerClassName}`}>
         <FadeIn>
           <header className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
             <h2
-              className={`text-3xl font-bold tracking-tight sm:text-4xl ${
+              className={`text-balance text-3xl font-bold tracking-tight sm:text-4xl ${
                 isDark ? 'text-white' : 'text-brand-950'
               }`}
             >

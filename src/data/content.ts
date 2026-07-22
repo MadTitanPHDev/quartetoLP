@@ -108,15 +108,15 @@ export const eventPageContent = {
   highlights: [
     {
       title: 'Palestras e painéis',
-      text: 'Espaço reservado para descrever as principais programações, temas abordados e convidados.',
+      text: 'Atualize-se com grandes especialistas do setor de SST. Acompanhe debates profundos sobre atualizações das NRs, cultura de segurança, saúde mental e inovações tecnológicas na prevenção de acidentes.',
     },
     {
       title: 'Networking qualificado',
-      text: 'Texto temporário sobre oportunidades de conexão entre profissionais, empresas e instituições.',
+      text: 'Amplie sua rede de contatos profissionais. Conecte-se com engenheiros, técnicos, médicos do trabalho e gestores para trocar experiências, discutir desafios do setor e criar parcerias estratégicas.',
     },
     {
       title: 'Conteúdo aplicável',
-      text: 'Texto temporário sobre cases, workshops e materiais que os participantes levam para o dia a dia.',
+      text: 'Vá além da teoria. Tenha acesso a estudos de caso reais e ferramentas práticas que você poderá implementar imediatamente para melhorar a gestão de riscos e a qualidade de vida na sua empresa.',
     },
   ],
   gallery: [

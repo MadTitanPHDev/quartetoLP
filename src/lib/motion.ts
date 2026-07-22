@@ -22,12 +22,12 @@ export const fadeIn = {
 }
 
 export const slideFromLeft = {
-  hidden: { opacity: 0, x: -36 },
+  hidden: { opacity: 0, x: -16 },
   visible: { opacity: 1, x: 0 },
 }
 
 export const slideFromRight = {
-  hidden: { opacity: 0, x: 36 },
+  hidden: { opacity: 0, x: 16 },
   visible: { opacity: 1, x: 0 },
 }
 

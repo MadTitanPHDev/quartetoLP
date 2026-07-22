@@ -45,7 +45,7 @@ export default function FadeIn({
   return (
     <motion.div
       ref={ref}
-      className={className}
+      className={['min-w-0 max-w-full', className].filter(Boolean).join(' ')}
       initial="hidden"
       animate={isVisible ? 'visible' : 'hidden'}
       variants={selectedVariant}

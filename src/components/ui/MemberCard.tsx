@@ -10,7 +10,7 @@ export default function MemberCard({ member, reversed = false }: MemberCardProps
   return (
     <article
       id={member.id}
-      className={`grid items-center gap-8 md:grid-cols-2 md:gap-12 ${
+      className={`grid min-w-0 items-center gap-8 overflow-x-clip md:grid-cols-2 md:gap-12 ${
         reversed ? 'md:[&>*:first-child]:order-2' : ''
       }`}
     >

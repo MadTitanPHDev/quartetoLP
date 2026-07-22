@@ -32,7 +32,7 @@ export default function HomePage() {
               </p>
             </StaggerItem>
             <StaggerItem>
-              <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+              <h1 className="text-balance break-words text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
                 {siteConfig.fullName}
               </h1>
             </StaggerItem>

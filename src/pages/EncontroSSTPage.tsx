@@ -120,14 +120,14 @@ export default function EncontroSSTPage() {
       <Section title={eventPageContent.additionalText.title} variant="muted">
         <FadeIn>
           <div className="mx-auto max-w-4xl space-y-8">
-            <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 p-8 text-white shadow-lg sm:p-10">
+            <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 p-6 text-white shadow-lg sm:p-10">
               <p className="text-sm font-semibold uppercase tracking-widest text-brand-200">
                 Próxima edição
               </p>
-              <p className="mt-2 text-5xl font-bold sm:text-6xl">
+              <p className="mt-2 text-balance break-words text-5xl font-bold sm:text-6xl">
                 {eventPageContent.additionalText.highlight.edition}
               </p>
-              <p className="mt-2 text-lg text-brand-100 sm:text-xl">
+              <p className="mt-2 text-balance text-lg text-brand-100 sm:text-xl">
                 {eventPageContent.additionalText.highlight.editionFull}
               </p>
 

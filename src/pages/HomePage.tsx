@@ -28,11 +28,6 @@ export default function HomePage() {
         <div className="section-container grid min-h-[70vh] items-center gap-10 py-20 lg:grid-cols-2 lg:py-28">
           <Stagger onMount>
             <StaggerItem>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-brand-200">
-                Segurança e Saúde do Trabalho
-              </p>
-            </StaggerItem>
-            <StaggerItem>
               <h1
                 id="inicio-heading"
                 className="text-balance break-words text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl"

@@ -3,6 +3,7 @@ import SEO from '../components/layout/SEO'
 import Section from '../components/ui/Section'
 import MemberCard from '../components/ui/MemberCard'
 import FadeIn from '../components/ui/FadeIn'
+import ResponsiveImage from '../components/ui/ResponsiveImage'
 import { Stagger, StaggerItem } from '../components/ui/Stagger'
 import {
   aboutContent,
@@ -13,15 +14,15 @@ import {
 
 export default function HomePage() {
   const description =
-    'Conheça O Quarteto de Segurança e Saúde do Trabalho: especialistas em SST, história do grupo, integrantes e o Encontro de SST anual.'
+    'Conheça o Quarteto de Segurança e Saúde do Trabalho: história do grupo, integrantes e o Encontro de SST anual em Presidente Prudente.'
 
   return (
     <>
       <SEO title={siteConfig.name} description={description} path="/" />
 
-      {/* Hero — primeira impressão e proposta de valor */}
       <section
         id="inicio"
+        aria-labelledby="inicio-heading"
         className="relative overflow-hidden bg-gradient-to-br from-brand-950 via-brand-800 to-brand-700 text-white"
       >
         <div className="section-container grid min-h-[70vh] items-center gap-10 py-20 lg:grid-cols-2 lg:py-28">
@@ -32,7 +33,10 @@ export default function HomePage() {
               </p>
             </StaggerItem>
             <StaggerItem>
-              <h1 className="text-balance break-words text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+              <h1
+                id="inicio-heading"
+                className="text-balance break-words text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl"
+              >
                 {siteConfig.fullName}
               </h1>
             </StaggerItem>
@@ -43,13 +47,13 @@ export default function HomePage() {
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
                   href="#sobre"
-                  className="rounded-lg bg-white px-5 py-3 text-sm font-semibold text-brand-900 transition hover:bg-brand-50 hover:scale-105 active:scale-95"
+                  className="rounded-lg bg-white px-5 py-3 text-sm font-semibold text-brand-900 transition hover:bg-brand-50 hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   Conheça o Quarteto
                 </a>
                 <Link
                   to={eventPreview.ctaPath}
-                  className="rounded-lg border border-white/40 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10 hover:scale-105 active:scale-95"
+                  className="rounded-lg border border-white/40 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10 hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   {eventPreview.ctaLabel}
                 </Link>
@@ -59,19 +63,20 @@ export default function HomePage() {
 
           <FadeIn variant="scale" onMount delay={0.2}>
             <figure className="overflow-hidden rounded-2xl border border-white/20 shadow-2xl">
-              <img
+              <ResponsiveImage
                 src="/images/final.webp"
-                alt="O Quarteto de Segurança e Saúde do Trabalho"
+                alt="Integrantes do Quarteto de Segurança e Saúde do Trabalho"
+                width={960}
+                height={720}
+                sizes="(max-width: 1024px) 100vw, 560px"
+                loading="eager"
                 className="aspect-[4/3] w-full object-cover"
-                width={800}
-                height={600}
               />
             </figure>
           </FadeIn>
         </div>
       </section>
 
-      {/* Sobre — história e missão do grupo */}
       <Section id="sobre" title={aboutContent.title} subtitle={aboutContent.subtitle}>
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <FadeIn variant="left">
@@ -86,20 +91,19 @@ export default function HomePage() {
 
           <FadeIn variant="right" delay={0.1}>
             <figure className="group overflow-hidden rounded-2xl border border-brand-100 shadow-sm transition-shadow duration-300 hover:shadow-md">
-              <img
+              <ResponsiveImage
                 src={aboutContent.image.src}
-                alt="Imagem ilustrativa da história do Quarteto"
+                alt={aboutContent.image.alt}
+                width={960}
+                height={720}
+                sizes="(max-width: 1024px) 100vw, 560px"
                 className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-                width={800}
-                height={600}
               />
             </figure>
           </FadeIn>
         </div>
       </Section>
 
-      {/* Integrantes — perfil objetivo de cada membro */}
       <Section
         id="integrantes"
         title="Integrantes"
@@ -113,7 +117,6 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Encontro de SST — destaque do evento anual com link para página dedicada */}
       <Section
         id="encontro"
         title={eventPreview.title}
@@ -123,13 +126,13 @@ export default function HomePage() {
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <FadeIn variant="left">
             <figure className="overflow-hidden rounded-2xl border border-brand-700 bg-brand-900/40">
-              <img
+              <ResponsiveImage
                 src={eventPreview.image.src}
                 alt={eventPreview.image.alt}
+                width={960}
+                height={540}
+                sizes="(max-width: 1024px) 100vw, 560px"
                 className="h-auto w-full object-contain"
-                loading="lazy"
-                width={800}
-                height={450}
               />
             </figure>
           </FadeIn>
@@ -139,7 +142,7 @@ export default function HomePage() {
               <p className="leading-relaxed text-brand-100">{eventPreview.description}</p>
               <Link
                 to={eventPreview.ctaPath}
-                className="mt-8 inline-flex rounded-lg bg-accent-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-600 hover:scale-105 active:scale-95"
+                className="mt-8 inline-flex rounded-lg bg-accent-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-600 hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 {eventPreview.ctaLabel}
               </Link>

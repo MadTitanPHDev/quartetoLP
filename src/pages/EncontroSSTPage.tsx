@@ -45,7 +45,7 @@ export default function EncontroSSTPage() {
         description={description}
         path="/encontro-sst"
         image="/images/SST.webp"
-        type="event"
+        type="website"
         jsonLd={eventJsonLd}
       />
 
@@ -54,15 +54,22 @@ export default function EncontroSSTPage() {
         <div className="section-container max-w-3xl">
           <Stagger onMount>
             <StaggerItem>
-              <nav aria-label="Breadcrumb" className="mb-4 text-sm text-brand-200">
+              <nav aria-label="Trilha de navegação" className="mb-4 text-sm text-brand-200">
                 <ol className="flex flex-wrap items-center gap-2">
                   <li>
-                    <Link to="/" className="transition hover:text-white">
+                    <Link
+                      to="/"
+                      className="transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                    >
                       Início
                     </Link>
                   </li>
                   <li aria-hidden="true">/</li>
-                  <li className="text-white">{eventPageContent.title}</li>
+                  <li>
+                    <span aria-current="page" className="text-white">
+                      {eventPageContent.title}
+                    </span>
+                  </li>
                 </ol>
               </nav>
             </StaggerItem>
@@ -149,9 +156,10 @@ export default function EncontroSSTPage() {
                   href={eventPageContent.additionalText.registration.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex shrink-0 justify-center rounded-lg bg-white px-5 py-3 text-sm font-semibold text-brand-900 transition hover:bg-brand-50 hover:scale-105 active:scale-95 lg:self-center"
+                  className="inline-flex shrink-0 justify-center rounded-lg bg-white px-5 py-3 text-sm font-semibold text-brand-900 transition hover:bg-brand-50 hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white lg:self-center"
                 >
                   {eventPageContent.additionalText.registration.label}
+                  <span className="sr-only"> (abre em nova aba)</span>
                 </a>
               </div>
 

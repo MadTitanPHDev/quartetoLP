@@ -29,7 +29,7 @@ export default function SEO({
     alternateName: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.tagline,
-    email: siteConfig.email,
+    sameAs: [siteConfig.instagram.url],
   }
 
   const structuredData = jsonLd ?? defaultJsonLd

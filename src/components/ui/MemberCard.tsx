@@ -1,5 +1,6 @@
 import type { Member } from '../../data/content'
 import FadeIn from './FadeIn'
+import ResponsiveImage from './ResponsiveImage'
 
 type MemberCardProps = {
   member: Member
@@ -16,13 +17,13 @@ export default function MemberCard({ member, reversed = false }: MemberCardProps
     >
       <FadeIn variant={reversed ? 'right' : 'left'}>
         <figure className="group overflow-hidden rounded-2xl border border-brand-100 bg-brand-50 shadow-sm transition-shadow duration-300 hover:shadow-md">
-          <img
+          <ResponsiveImage
             src={member.image.src}
             alt={member.image.alt}
-            className="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
             width={480}
             height={600}
+            sizes="(max-width: 768px) 100vw, 480px"
+            className="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </figure>
       </FadeIn>

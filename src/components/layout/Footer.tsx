@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { navigation, siteConfig } from '../../data/content'
+import { InstagramIcon } from '../ui/InstagramFloatButton'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -43,8 +44,14 @@ export default function Footer() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-brand-300">
             Contato
           </p>
-          <a href={`mailto:${siteConfig.email}`} className="text-sm hover:text-white">
-            {siteConfig.email}
+          <a
+            href={siteConfig.instagram.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm transition hover:text-white"
+          >
+            <InstagramIcon className="h-5 w-5 shrink-0" />
+            <span>{siteConfig.instagram.handle}</span>
           </a>
         </div>
       </div>

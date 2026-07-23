@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { navigation, siteConfig } from '../../data/content'
@@ -10,6 +10,9 @@ export default function Header() {
   const location = useLocation()
   const isHome = location.pathname === '/'
   const shouldReduceMotion = useReducedMotion()
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const menuRef = useRef<HTMLElement>(null)
+  const menuId = useId()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -21,6 +24,39 @@ export default function Header() {
   useEffect(() => {
     setMenuOpen(false)
   }, [location.pathname])
+
+  useEffect(() => {
+    if (!menuOpen) return
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+        menuButtonRef.current?.focus()
+      }
+
+      if (event.key === 'Tab' && menuRef.current) {
+        const focusable = menuRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled])',
+        )
+        if (focusable.length === 0) return
+        const first = focusable[0]
+        const last = focusable[focusable.length - 1]
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault()
+          last.focus()
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault()
+          first.focus()
+        }
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    const firstLink = menuRef.current?.querySelector<HTMLElement>('a[href]')
+    firstLink?.focus()
+
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [menuOpen])
 
   const handleNavClick = () => setMenuOpen(false)
 
@@ -43,7 +79,7 @@ export default function Header() {
       <div className="section-container flex h-16 items-center justify-between gap-4">
         <Link
           to="/"
-          className="group flex min-w-0 items-center gap-2 sm:gap-3"
+          className="group flex min-w-0 items-center gap-2 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 sm:gap-3"
           aria-label={`${siteConfig.fullName} — página inicial`}
           onClick={handleNavClick}
         >
@@ -71,7 +107,7 @@ export default function Header() {
               to={resolveHref(item.href)}
               className={({ isActive }) =>
                 [
-                  'rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200',
+                  'rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600',
                   isActive && item.href === '/encontro-sst'
                     ? 'bg-brand-50 text-brand-800'
                     : 'text-slate-600 hover:bg-brand-50 hover:text-brand-800',
@@ -85,14 +121,14 @@ export default function Header() {
         </nav>
 
         <button
+          ref={menuButtonRef}
           type="button"
-          className="inline-flex items-center justify-center rounded-lg border border-brand-200 p-2 text-brand-800 transition hover:bg-brand-50 md:hidden"
+          className="inline-flex items-center justify-center rounded-lg border border-brand-200 p-2 text-brand-800 transition hover:bg-brand-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 md:hidden"
           aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
+          aria-controls={menuId}
           aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
           onClick={() => setMenuOpen((open) => !open)}
         >
-          <span className="sr-only">Menu</span>
           <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
             {menuOpen ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -106,7 +142,8 @@ export default function Header() {
       <AnimatePresence>
         {menuOpen && (
           <motion.nav
-            id="mobile-menu"
+            ref={menuRef}
+            id={menuId}
             className="overflow-hidden border-t border-brand-100 bg-white md:hidden"
             aria-label="Navegação mobile"
             initial={shouldReduceMotion ? false : 'hidden'}
@@ -120,7 +157,7 @@ export default function Header() {
                 <li key={item.href}>
                   <NavLink
                     to={resolveHref(item.href)}
-                    className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-brand-50"
+                    className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-brand-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
                     onClick={handleNavClick}
                   >
                     {item.label}
